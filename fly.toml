@@ -11,6 +11,7 @@ processes = []
   PDNSCONF_SERVER_MODE="primary"
   PDNSCONF_GPGSQL_PORT="5432"
   PDNSCONF_FYLIO_GIP="149.248.219.230, 0.0.0.0"
+  PDNSCONF_DEFAULT_SOA="149.248.219.230 bk-pdns.fly.dev.@ 0 10800 3600 604800 3600"
 
 [experimental]
   allowed_public_ports = []

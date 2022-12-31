@@ -8,7 +8,8 @@ ENV PDNSCONF_GPGSQL_HOST="postgres" \
     PDNSCONF_GPGSQL_PASSWORD="changeme" \
     PDNSCONF_API_KEY="changeme" \
     PDNSCONF_FYLIO_GIP="0.0.0.0" \
-    PDNSCONF_SERVER_TYPE="primary"
+    PDNSCONF_SERVER_TYPE="primary" \
+    PDNSCONF_DEFAULT_SOA="a.dns.server web.hostmaster.@ 0 10800 3600 604800 3600"
 
 RUN apk --update --no-cache add \
         pdns \
