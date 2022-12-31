@@ -2,11 +2,13 @@ FROM alpine:latest
 LABEL maintainer="Bernd Klaus"
 
 ENV PDNSCONF_GPGSQL_HOST="postgres" \
+    PDNSCONF_GPGSQL_PORT="5432" \
     PDNSCONF_GPGSQL_DBNAME="pdns" \
-    PDNSCONF_GPGSQL_USER="pdns" \
+    PDNSCONF_GPGSQL_USER="postgres" \
     PDNSCONF_GPGSQL_PASSWORD="changeme" \
     PDNSCONF_API_KEY="changeme" \
-    PDNSCONF_SERVER_TYPE="master"
+    PDNSCONF_FYLIO_GIP="0.0.0.0" \
+    PDNSCONF_SERVER_TYPE="primary"
 
 RUN apk --update --no-cache add \
         pdns \
