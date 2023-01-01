@@ -12,12 +12,11 @@ sed -i 's|.*default-soa-content=.*|'default-soa-content=PDNSCONF_DEFAULT_SOA'|g'
 
 
 
-if [ "${PDNSCONF_SERVER_MODE}" == "master" ]; then
+if [ "${PDNSCONF_FLYIO_MAINREGION}" == "${FLY_REGION}" ]; then
   sed -i 's|.*sedreplacementcode.*|'primary=yes\ \#Or:\ secondary=yes\ -sedreplacementcode'|g' /etc/pdns/pdns.conf
-elif [ "${PDNSCONF_SERVER_MODE}" == "slave" ]; then
-  sed -i 's|.*sedreplacementcode.*|'secondary=yes\ \#Or:\ primary=yes\ -sedreplacementcode'|g' /etc/pdns/pdns.conf
 else
-  sed -i 's|.*sedreplacementcode.*|'primary=yes\ \#Or:\ secondary=yes\ -sedreplacementcode'|g' /etc/pdns/pdns.conf
+  sed -i 's|.*sedreplacementcode.*|'secondary=yes\ \#Or:\ primary=yes\ -sedreplacementcode'|g' /etc/pdns/pdns.conf
+  sed -i 's|.*gpgsql-port=.*|'gpgsql-port=$PDNSCONF_GPGSQL_READPORT'|g' /etc/pdns/pdns.conf
 fi
 
 echo "Lets Fly our PowerDNS!"
