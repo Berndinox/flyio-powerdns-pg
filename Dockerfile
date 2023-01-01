@@ -14,10 +14,8 @@ ENV PDNSCONF_GPGSQL_HOST="postgres" \
 
 RUN apk --update --no-cache add \
         pdns \
-        pdns-backend-lua2 \
         pdns-backend-pgsql \
         pdns-backend-bind \
-        pdns-backend-geoip \
     && rm -rf /var/cache/apk/* \
     && rm -rf /tmp/* \
     && rm -rf /var/log/* \
