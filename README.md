@@ -2,6 +2,10 @@
 Ultra-scalable authorativ PowerDNS Server on Fly.io
 
 ## Config
+Non sensitive Information can be specified in the fly.toml file.  
+For passwords, you should use `flyctl secrets set VAR=VALUE` cmdlet.
+
+### Enviroment variables
 **PDNSCONF_GPGSQL_HOST="postgres"**  
 Hostname or DNS of the Postgres Database.  
 
