@@ -1,18 +1,18 @@
-# fly.toml file generated for bk-pdns on 2022-12-31T10:24:13+01:00
+# fly.toml file generated for pdns on 2023-01-02T11:42:29+01:00
 
-app = "bk-pdns"
+app = "pdns"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
 [env]
-  PDNSCONF_GPGSQL_DBNAME="pdns"  
-  PDNSCONF_GPGSQL_USER="postgres"  
-  PDNSCONF_FLYIO_MAINREGION="fra"
-  PDNSCONF_GPGSQL_PORT="5432"
-  PDNSCONF_GPGSQL_READPORT="5433"
-  PDNSCONF_FYLIO_GIP="149.248.219.230, 66.51.121.146, 0.0.0.0"
-  PDNSCONF_DEFAULT_SOA="ns1.berndklaus.cloud. berndklaus.cloud. 0 10800 3600 604800 3600"
+  PDNSCONF_DEFAULT_SOA = "ns1.berndklaus.cloud. berndklaus.cloud. 0 10800 3600 604800 3600"
+  PDNSCONF_FLYIO_MAINREGION = "cdg"
+  PDNSCONF_FYLIO_GIP = "137.66.51.188, 169.155.52.127, 0.0.0.0"
+  PDNSCONF_GPGSQL_DBNAME = "pdns"
+  PDNSCONF_GPGSQL_PORT = "5432"
+  PDNSCONF_GPGSQL_READPORT = "5433"
+  PDNSCONF_GPGSQL_USER = "postgres"
 
 [experimental]
   allowed_public_ports = []

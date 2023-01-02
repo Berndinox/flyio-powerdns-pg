@@ -24,6 +24,7 @@ RUN apk --update --no-cache add \
 
 COPY pdns.conf /etc/pdns/pdns.conf
 COPY entrypoint.sh /
+RUN chmod +x entrypoint.sh
 
 EXPOSE 53/tcp 53/udp 80/tcp
 
