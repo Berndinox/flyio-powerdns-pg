@@ -1,7 +1,7 @@
 # flyio-powerdns-pg
 Ultra-scalable authorativ PowerDNS Server on Fly.io
 
-### Config
+## Config
 **PDNSCONF_GPGSQL_HOST="postgres"**  
 Hostname or DNS of the Postgres Database.  
 
@@ -27,7 +27,7 @@ Password when using the PowerDNS API (e.g. when connecting with PowerDNS-Admin)
 **PDNSCONF_FYLIO_GIP="0.0.0.0"**  
 Your globaly routed IPv4. Get one with: flyctl ips allocate-v4  
 For a productive authroativ nameserver you should use 2 IPs.  
-Note: Just using 0.0.0.0 does not work because of routing ob UDP Packets inside the Fly.io network.  
+Note: Just using 0.0.0.0 does not work because of routing of UDP Packets inside the Fly.io network.  
 Note: Comma seperated List.  
 
 **PDNSCONF_FLYIO_MAINREGION="fra"**  
