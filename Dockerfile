@@ -23,10 +23,10 @@ RUN apk --update --no-cache add \
     && mkdir -p /etc/pdns/conf.d
 
 COPY pdns.conf /etc/pdns/pdns.conf
-COPY entrypoint.sh /
-RUN chmod +x entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 53/tcp 53/udp 80/tcp
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "entrypoint.sh" ]
 CMD [ "/usr/sbin/pdns_server", "--disable-syslog=yes"]
