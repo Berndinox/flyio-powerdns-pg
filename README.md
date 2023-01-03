@@ -7,6 +7,7 @@ For passwords, you should use `flyctl secrets set VAR=VALUE` cmdlet.
 
 <<<<<<< HEAD
 ## Environment variables
+<<<<<<< HEAD
 **PDNS_DNSDIST_ENABLED**
 This Variable should be set during Container-Build as well when starting the Container.
 If set DNSDIST will be installed and configured.
@@ -22,6 +23,8 @@ ATM: Fly.io can`t resolv those Records when issueing SSL Certs.
 
 ## Enviroment variables
 >>>>>>> parent of 837f61a... ReadMe
+=======
+>>>>>>> parent of 69a1c6e... Add DNSDIST
 **PDNSCONF_GPGSQL_HOST="postgres"**  
 Hostname or DNS of the Postgres Database.  
 

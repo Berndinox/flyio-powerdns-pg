@@ -8,11 +8,11 @@ processes = []
 [env]
   PDNSCONF_DEFAULT_SOA = "ns1.berndklaus.cloud. berndklaus.cloud. 0 10800 3600 604800 3600"
   PDNSCONF_FLYIO_MAINREGION = "cdg"
+  PDNSCONF_FYLIO_GIP = "0.0.0.0"
   PDNSCONF_GPGSQL_DBNAME = "pdns"
   PDNSCONF_GPGSQL_PORT = "5432"
   PDNSCONF_GPGSQL_READPORT = "5433"
   PDNSCONF_GPGSQL_USER = "postgres"
-  PDNS_DNSDIST_FAILOVER_IP = "137.66.51.188"
 
 [experimental]
   allowed_public_ports = []
