@@ -5,6 +5,10 @@ Ultra-scalable authorativ PowerDNS Server on Fly.io
 Non sensitive Information can be specified in the fly.toml file.  
 For passwords, you should use `flyctl secrets set VAR=VALUE` cmdlet.
 
+## Restrictions
+The Records for the nameserver itself (A, AAA, CNAME) should not be hosted on the server itself.
+ATM: Fly.io can`t resolv those Records when issueing SSL Certs.
+
 ### Enviroment variables
 **PDNSCONF_GPGSQL_HOST="postgres"**  
 Hostname or DNS of the Postgres Database.  
@@ -27,12 +31,6 @@ Password of the Database, will be shown when deploying a PG-DB on fly.io
 
 **PDNSCONF_API_KEY="changeme"**  
 Password when using the PowerDNS API (e.g. when connecting with PowerDNS-Admin)  
-
-**PDNSCONF_FYLIO_GIP="0.0.0.0"**  
-Your globaly routed IPv4. Get one with: flyctl ips allocate-v4  
-For a productive authroativ nameserver you should use 2 IPs.  
-Note: Just using 0.0.0.0 does not work because of routing of UDP Packets inside the Fly.io network.  
-Note: Comma seperated List.  
 
 **PDNSCONF_FLYIO_MAINREGION="fra"**  
 Your Mainregion specified during initial Fly deployment.  
