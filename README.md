@@ -1,30 +1,15 @@
 # flyio-powerdns-pg
 Ultra-scalable authorativ PowerDNS Server on Fly.io
 
-## Config
-Non sensitive Information can be specified in the fly.toml file.  
-For passwords, you should use `flyctl secrets set VAR=VALUE` cmdlet.
-
-<<<<<<< HEAD
-## Environment variables
-<<<<<<< HEAD
-**PDNS_DNSDIST_ENABLED**
-This Variable should be set during Container-Build as well when starting the Container.
-If set DNSDIST will be installed and configured.
-
-**PDNS_DNSDIST_FAILOVER_IP**
-Failover IP if the local PowerDNS Instance dies: Recommand to set!
-Default is to forward to 8.8.8.8 if Instance dies.  
-
-=======
 ## Restrictions
 The Records for the nameserver itself (A, AAA, CNAME) should not be hosted on the server itself.  
 ATM: Fly.io can`t resolv those Records when issueing SSL Certs.
 
-## Enviroment variables
->>>>>>> parent of 837f61a... ReadMe
-=======
->>>>>>> parent of 69a1c6e... Add DNSDIST
+## Config
+Non sensitive Information can be specified in the fly.toml file.  
+For passwords, you should use `flyctl secrets set VAR=VALUE` cmdlet.
+
+## Environment variables
 **PDNSCONF_GPGSQL_HOST="postgres"**  
 Hostname or DNS of the Postgres Database.  
 
@@ -54,3 +39,6 @@ All other regions will connect to read replicas cause of there better performanc
 
 **PDNSCONF_DEFAULT_SOA="a.dns.server. web.hostmaster. 0 10800 3600 604800 3600"**  
 Your Default SOA Record.
+
+## Metrics
+After deploying open the Fly.io Grafana Dashboard and Import the folowing [Template](https://grafana.com/grafana/dashboards/14768-powerdns-authorative-server-metrics/).
