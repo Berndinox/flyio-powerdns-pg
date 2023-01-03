@@ -57,3 +57,7 @@ processes = []
 
   [[services.ports]]
     port = "53"
+
+[metrics]
+  port = 80
+  path = "/metrics" # default for most prometheus clients
