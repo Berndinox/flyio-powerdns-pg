@@ -10,6 +10,14 @@ Non sensitive Information can be specified in the fly.toml file.
 For passwords, you should use `flyctl secrets set VAR=VALUE` cmdlet.
 
 ## Environment variables
+**PDNS_DNSDIST_ENABLED**
+This Variable should be set during Container-Build as well when starting the Container.
+If set DNSDIST will be installed and configured.
+
+**PDNS_DNSDIST_FAILOVER_IP**
+Failover IP if the local PowerDNS Instance dies: Recommand to set!
+Default is to forward to 8.8.8.8 if Instance dies.  
+
 **PDNSCONF_GPGSQL_HOST="postgres"**  
 Hostname or DNS of the Postgres Database.  
 
