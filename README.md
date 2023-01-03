@@ -6,7 +6,7 @@ Non sensitive Information can be specified in the fly.toml file.
 For passwords, you should use `flyctl secrets set VAR=VALUE` cmdlet.
 
 ## Restrictions
-The Records for the nameserver itself (A, AAA, CNAME) should not be hosted on the server itself.
+The Records for the nameserver itself (A, AAA, CNAME) should not be hosted on the server itself.  
 ATM: Fly.io can`t resolv those Records when issueing SSL Certs.
 
 ## Enviroment variables
