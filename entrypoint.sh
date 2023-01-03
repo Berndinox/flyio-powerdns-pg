@@ -14,7 +14,7 @@ if [ "${PDNSCONF_FLYIO_MAINREGION}" == "${FLY_REGION}" ]; then
 else
   sed -i 's|.*sedreplacementcode.*|'secondary=yes\ \#Or:\ primary=yes\ -sedreplacementcode'|g' /etc/pdns/pdns.conf
   sed -i 's|.*gpgsql-port=.*|'gpgsql-port="$PDNSCONF_GPGSQL_READPORT"'|g' /etc/pdns/pdns.conf
-  sed -i 's|gpgsql-dbname=top2|'gpgsql-dbname=top1.'|g' /etc/pdns/pdns.conf
+  sed -i 's|gpgsql-host=top2|'gpgsql-host=top1'|g' /etc/pdns/pdns.conf
 fi
 
 echo "Lets Fly our PowerDNS!"
