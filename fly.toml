@@ -1,6 +1,6 @@
-# fly.toml file generated for pdns on 2023-01-02T11:42:29+01:00
+# fly.toml file generated for pdns-auth on 2023-01-04T15:23:52+01:00
 
-app = "pdns"
+app = "pdns-auth"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
@@ -11,11 +11,15 @@ processes = []
   PDNSCONF_GPGSQL_DBNAME = "pdns"
   PDNSCONF_GPGSQL_PORT = "5432"
   PDNSCONF_GPGSQL_READPORT = "5433"
-  PDNSCONF_GPGSQL_USER = "postgres"
+  PDNSCONF_GPGSQL_USER = "pdns_auth"
 
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
+
+[metrics]
+  path = "/metrics"
+  port = 80
 
 [[services]]
   http_checks = []
@@ -24,8 +28,8 @@ processes = []
   protocol = "tcp"
   script_checks = []
   [services.concurrency]
-    hard_limit = 50
-    soft_limit = 30
+    hard_limit = 60
+    soft_limit = 50
     type = "connections"
 
   [[services.ports]]
@@ -47,16 +51,16 @@ processes = []
   internal_port = 53
   protocol = "udp"
 
-  [[services.ports]]
-    port = "53"
-
 [[services]]
   internal_port = 53
   protocol = "tcp"
+  [services.concurrency]
+    hard_limit = 100
+    soft_limit = 80
+    type = "connections"
 
-  [[services.ports]]
-    port = "53"
-
-[metrics]
-  port = 80
-  path = "/metrics" # default for most prometheus clients
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"
