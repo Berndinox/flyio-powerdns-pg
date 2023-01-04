@@ -16,6 +16,7 @@ processes = []
 [experimental]
   allowed_public_ports = []
   auto_rollback = true
+  private_network= true
 
 [metrics]
   path = "/metrics"
@@ -51,6 +52,9 @@ processes = []
   internal_port = 53
   protocol = "udp"
 
+  [[services.ports]]
+    port = 53
+
 [[services]]
   internal_port = 53
   protocol = "tcp"
@@ -59,6 +63,9 @@ processes = []
     soft_limit = 80
     type = "connections"
 
+  [[services.ports]]
+    port = 53
+    
   [[services.tcp_checks]]
     grace_period = "1s"
     interval = "15s"
