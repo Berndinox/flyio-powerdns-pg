@@ -64,7 +64,6 @@ processes = []
     type = "connections"
 
   [[services.ports]]
-    handlers = ["proxy_proto"]
     port = 53
     
   [[services.tcp_checks]]
