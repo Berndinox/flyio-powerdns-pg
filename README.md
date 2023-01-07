@@ -1,5 +1,6 @@
 # flyio-powerdns-pg
 Ultra-scalable authorativ PowerDNS Server on Fly.io
+Main Credits and thanks to: https://www.powerdns.com/
 
 ## Restrictions
 The Records for the nameserver itself (A, AAA, CNAME) should not be hosted on the server itself.  
