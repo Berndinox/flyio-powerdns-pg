@@ -11,7 +11,8 @@ For passwords, you should use `flyctl secrets set VAR=VALUE` cmdlet.
 
 ## Environment variables
 **PDNSCONF_GPGSQL_HOST="postgres"**  
-Hostname or DNS of the Postgres Database.  
+Hostname or DNS of the Postgres Database: <appname>.internal  
+Mainregion is configured for write-access, Edgeregions will connect to the nearest read replica automaticly.  
 
 **PDNSCONF_GPGSQL_PORT="5432"**  
 Port of the DB with write-capability.  
