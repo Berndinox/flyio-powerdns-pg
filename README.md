@@ -1,5 +1,5 @@
 # flyio-powerdns-pg
-Ultra-scalable authorativ PowerDNS Server on Fly.io
+Ultra-scalable authorativ PowerDNS Server on Fly.io.  
 Main Credits and thanks to: https://www.powerdns.com/
 
 ## Restrictions
